@@ -23,9 +23,6 @@ sopMusic = \relative c'' {
     }
   }
 }
-sopWords = \lyricmode {
-  
-}
 
 altoMusic = \relative c' {
   \repeat volta 4 {
@@ -107,8 +104,6 @@ tenorMusic = \relative c' {
     }
   }
 }
-tenorWords = \lyricmode {
-}
 
 bassMusic = \relative c {
   \repeat volta 4 {
@@ -121,36 +116,21 @@ bassMusic = \relative c {
     }
   }
 }
-bassWords = \lyricmode {
-}
 
 \score {
   <<
     \new ChoirStaff <<
-      \new Lyrics = "sopranos" \with {
-        % This is needed for lyrics above a staff
-        \override VerticalAxisGroup.staff-affinity = #DOWN
-      }
       \new Staff = "women" <<
         \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
         \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
       >>
       \new Lyrics = "altos"
-      \new Lyrics = "tenors" \with {
-        % This is needed for lyrics above a staff
-        \override VerticalAxisGroup.staff-affinity = #DOWN
-      }
-
+      \context Lyrics = "altos" \lyricsto "altos" \altoWords
       \new Staff = "men" <<
         \clef bass
         \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
         \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
       >>
-      \new Lyrics = "basses"
-      \context Lyrics = "sopranos" \lyricsto "sopranos" \sopWords
-      \context Lyrics = "altos" \lyricsto "altos" \altoWords
-      \context Lyrics = "tenors" \lyricsto "tenors" \tenorWords
-      \context Lyrics = "basses" \lyricsto "basses" \bassWords
     >>
     \new PianoStaff <<
       \new Staff <<
