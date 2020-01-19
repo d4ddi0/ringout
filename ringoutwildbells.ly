@@ -39,6 +39,10 @@ altoMusic = \relative c' {
   }
 }
 altoWords =\lyricmode {
+  <<
+  \new Lyrics = "firstVerse"
+  {
+  \set associatedVoice = "altos"
   Ring | out, wild bells, to the | wild _ sky,
   The | fly -- ing cloud, the fro -- sty light.
   The | year is dy -- ing, in the night;
@@ -48,36 +52,48 @@ altoWords =\lyricmode {
   Ring | ha -- ppy bells  a -- | cross the snow.
   The | year is go -- ing; | let him go.
   Ring | out the false; ring | in the true.
-
-  Ring | out the grief _ that | saps the mind
+  }
+  \new Lyrics = "secondVerse"
+  \with { alignBelowContext = #"firstVerse" } {
+    \set associatedVoice = "altos"
+  Ring | out the grief that _ | saps the mind
   For | those that here we | see no more;
   Ring | out the feud of | rich and poor,
-  Ring | in re -- dress _ _ to | all man -- kind.
+  Ring | in re -- dress to | all man -- kind.
 
-  Ring | out a slow -- ly | dy -- ing cause,
-  And | ancient forms of | party strife;
-  Ring | in the no -- bler _ | modes of life,
-  With | sweet -- er man -- | ners, pur -- er laws.
+  Ring | out a slow -- ly _ | dy -- ing cause,
+  And | anc -- ient forms of | par -- ty strife;
+  Ring | in the no -- bler | modes of life,
+  With | sweet -- er man -- ners, | pur -- er laws.
+  }
 
-  Ring | out the want, the | care, the sin,
-  The | faith -- less cold -- | ness of the times;
-  ring | out, ring out _ my | mourn -- ful rhymes
+  \new Lyrics = "thirdVerse"
+  \with { alignBelowContext = #"secondVerse" } {
+  \set associatedVoice = "altos"
+  Ring | out the want, the _ | care, the sin,
+  The | faith -- less cold -- ness | of the times;
+  ring | out, ring out my | mourn -- ful rhymes
   But | ring the full -- er | min -- strel in.
 
   Ring | out false pride _ in  | place and blood,
   The | ci -- vic slan -- der | and the spite;
-  Ring | in the love _ of | trith and right,
+  Ring | in the love of | truth and right,
   Ring | in the com -- mon | love of good.
-
-  Ring | out old shapes of | foul dis -- ease;
+  }
+  \new Lyrics = "fourthVerse"
+  \with { alignBelowContext = #"thirdVerse" } {
+  \set associatedVoice = "altos"
+  Ring | out old shapes of _ | foul dis -- ease;
   Ring | out the nar -- rowing | lust of gold;
-  Ring | out the thou -- sand | _ wars of old;
-  Ring | in the thou -- sand | years _ of peace;
+  Ring | out the thou -- sand | wars of old;
+  Ring | in the thou -- sand | years of peace;
 
-  Ring | in the val -iant | men and free,
-  The | larg -- er heart _ the | kind - lier hand.
+  Ring | in the val -iant _ | men and free,
+  The | larg -- er heart the | kind -- lier hand.
   Ring | out the dark -- ness | of the land;
   Ring | in the Christ that | is to be.
+  }
+  >>
 }
 
 tenorMusic = \relative c' {
