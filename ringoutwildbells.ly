@@ -19,9 +19,12 @@ sopMusic = \relative c'' {
       d,8 | d( e) f a4 a16( a16) | bes8( a) g a4
       a8 | g a bes a( f8.) f16 | g8( f) e f4
       f8 | d'4 d8 c f,4 | bes bes8 a4
-      a8 | e8.( f16) g8 f\( d8.\) d16 | e8 d cis d4.
-    }
-  }
+      a8 | e8.( f16) g8 f\( d8.\) d16
+    } \alternative { { | e8 d cis d4. } {} }
+  } \alternative { { | e8 d cis d4. } { | e8 d cis d4\fermata
+    f8 | d'4 d8 c f,4 | bes bes8 a4
+    a8 | e8.( f16) g8 f\( d8.\) d16 | e8 d cis d4.
+  } }
 }
 
 altoMusic = \relative c' {
@@ -31,9 +34,12 @@ altoMusic = \relative c' {
       a8 | a4 d8 f4 f16 f | g8( f) e f4
       f8 | d4 g8 f( d8.) d16 | e8( d) cis d4
       d8 | f4 f8 f c4 | d d8 cis4
-      d8 | d4 d8 d( d8.) d16 | cis8( d) a a4.
-    }
-  }
+      d8 | d4 d8 d( d8.) d16 |
+    } \alternative { { cis8( d) a a4. } {} }
+  } \alternative { { cis8( d) a a4. } { cis8( d) a a4
+  d8 | f4 f8 f c4 | d d8 cis4
+  d8 | d4 d8 d( d8.) d16 | cis8( d) a a4.
+  } }
 }
 altoWords =\lyricmode {
   <<
@@ -91,6 +97,9 @@ altoWords =\lyricmode {
   Ring | in the Christ that | is to be.
   }
   >>
+  is to be.
+  Ring | out the dark -- ness | of the land;
+  Ring | in the Christ that | is to be.
 }
 
 tenorMusic = \relative c' {
@@ -100,9 +109,12 @@ tenorMusic = \relative c' {
       f,8 | f4 a8 d4 d16( d16) | d4 bes8 d4
       d8 | bes4 d8 d8(a8.) a16 | a4 a8 a4
       a8 | bes4 bes8 f f4 | d8( e) f e4
-      f8 | bes4 bes8 a8( a8.) f16 | g8( f) e f4.
-    }
-  }
+      f8 | bes4 bes8 a8( a8.) f16 |
+    } \alternative { {  g8( f) e f4. } {} }
+  } \alternative { { g8( f) e  f4. } {  g8( f) e f4
+  a8 | bes4 bes8 f f4 | d8( e) f e4
+  f8 | bes4 bes8 a8( a8.) f16 | g8( f) e f4.
+  } }
 }
 
 bassMusic = \relative c {
@@ -112,9 +124,12 @@ bassMusic = \relative c {
       d8 | d4 d8 d4 d16( d) | d4 d8 d4
       d8 | g4 g8 a\( a8.\) a,16 | a4 a8 d4
       d8 | bes4 bes8 a8 a4 | g g8 a4
-      d8 | g8.( f16) e8 a\( f8.\) a,16 | a4 a8 d4.
-    }
-  }
+      d8 | g8.( f16) e8 a\( f8.\) a,16
+    } \alternative { {  | a4 a8 d4. } {} }
+  } \alternative { {  | a4 a8 d4. } {  | a4 a8 d4
+  d8 | bes4 bes8 a8 a4 | g g8 a4
+  d8 | g8.( f16) e8 a\( f8.\) a,16 | a4 a8 d4.
+  } }
 }
 
 \score {
