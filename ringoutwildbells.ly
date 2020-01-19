@@ -13,46 +13,97 @@ global = {
 }
 
 sopMusic = \relative c'' {
-  R2. | r2 r8 
-  d,8 | d( e) f a4 a16( a16) | bes8( a) g a4
-  a8 | g a bes a( f8.) f16 | g8( f) e f4
-  f8 | d'4 d8 c f,4 | bes bes8 a4
-  a8 | e8.( f16) g8 f\( d8.\) d16 | e8 d cis d4
+  \repeat volta 4 {
+    \repeat unfold 2 {
+      R2. | r2 r8
+      d,8 | d( e) f a4 a16( a16) | bes8( a) g a4
+      a8 | g a bes a( f8.) f16 | g8( f) e f4
+      f8 | d'4 d8 c f,4 | bes bes8 a4
+      a8 | e8.( f16) g8 f\( d8.\) d16 | e8 d cis d4.
+    }
+  }
 }
 sopWords = \lyricmode {
   
 }
 
 altoMusic = \relative c' {
-  R2. | r2 r8
-  a8 | a4 d8 f4 f16 f | g8( f) e f4
-  f8 | d4 g8 f( d8.) d16 | e8( d) cis d4
-  d8 | f4 f8 f c4 | d d8 cis4
-  d8 | d4 d8 d( d8.) d16 | cis8( d) a a4
+  \repeat volta 4 {
+    \repeat unfold 2 {
+      R2. | r2 r8
+      a8 | a4 d8 f4 f16 f | g8( f) e f4
+      f8 | d4 g8 f( d8.) d16 | e8( d) cis d4
+      d8 | f4 f8 f c4 | d d8 cis4
+      d8 | d4 d8 d( d8.) d16 | cis8( d) a a4.
+    }
+  }
 }
 altoWords =\lyricmode {
   Ring | out, wild bells, to the | wild _ sky,
   The | fly -- ing cloud, the fro -- sty light.
   The | year is dy -- ing, in the night;
   Ring | out, wild bells, and let him die.
+
+  Ring | out the old; ring _ | in the new.
+  Ring | ha -- ppy bells  a -- | cross the snow.
+  The | year is go -- ing; | let him go.
+  Ring | out the false; ring | in the true.
+
+  Ring | out the grief _ that | saps the mind
+  For | those that here we | see no more;
+  Ring | out the feud of | rich and poor,
+  Ring | in re -- dress _ _ to | all man -- kind.
+
+  Ring | out a slow -- ly | dy -- ing cause,
+  And | ancient forms of | party strife;
+  Ring | in the no -- bler _ | modes of life,
+  With | sweet -- er man -- | ners, pur -- er laws.
+
+  Ring | out the want, the | care, the sin,
+  The | faith -- less cold -- | ness of the times;
+  ring | out, ring out _ my | mourn -- ful rhymes
+  But | ring the full -- er | min -- strel in.
+
+  Ring | out false pride _ in  | place and blood,
+  The | ci -- vic slan -- der | and the spite;
+  Ring | in the love _ of | trith and right,
+  Ring | in the com -- mon | love of good.
+
+  Ring | out old shapes of | foul dis -- ease;
+  Ring | out the nar -- rowing | lust of gold;
+  Ring | out the thou -- sand | _ wars of old;
+  Ring | in the thou -- sand | years _ of peace;
+
+  Ring | in the val -iant | men and free,
+  The | larg -- er heart _ the | kind - lier hand.
+  Ring | out the dark -- ness | of the land;
+  Ring | in the Christ that | is to be.
 }
 
 tenorMusic = \relative c' {
-  R2. | r2 r8
-  f,8 | f4 a8 d4 d16( d16) | d4 bes8 d4
-  d8 | bes4 d8 d8(a8.) a16 | a4 a8 a4
-  a8 | bes4 bes8 f f4 | d8( e) f e4
-  f8 | bes4 bes8 a8( a8.) f16 | g8( f) e f4
+  \repeat volta 4 {
+    \repeat unfold 2 {
+      R2. | r2 r8
+      f,8 | f4 a8 d4 d16( d16) | d4 bes8 d4
+      d8 | bes4 d8 d8(a8.) a16 | a4 a8 a4
+      a8 | bes4 bes8 f f4 | d8( e) f e4
+      f8 | bes4 bes8 a8( a8.) f16 | g8( f) e f4.
+    }
+  }
 }
 tenorWords = \lyricmode {
 }
 
 bassMusic = \relative c {
-  R2. | r2 r8
-  d8 | d4 d8 d4 d16( d) | d4 d8 d4
-  d8 | g4 g8 a\( a8.\) a,16 | a4 a8 d4
-  d8 | bes4 bes8 a8 a4 | g g8 a4
-  d8 | g8.( f16) e8 a\( f8.\) a,16 | a4 a8 d4
+  \repeat volta 4 {
+    \repeat unfold 2 {
+      R2. | r2 r8
+      d8 | d4 d8 d4 d16( d) | d4 d8 d4
+      d8 | g4 g8 a\( a8.\) a,16 | a4 a8 d4
+      d8 | bes4 bes8 a8 a4 | g g8 a4
+      d8 | g8.( f16) e8 a\( f8.\) a,16 | a4 a8 d4.
+    }
+  }
 }
 bassWords = \lyricmode {
 }
