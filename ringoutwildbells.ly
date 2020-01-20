@@ -12,14 +12,14 @@ global = {
   \time 6/8
 }
 choral_rest = { R2. | r2 r8 }
-sop_phraseone = { d,8 | d( e) f a4 a16( a16) | bes8( a) g a4 }
+sop_phraseone = { d8 | d( e) f a4 a16( a16) | bes8( a) g a4 }
 sop_phrasetwo = { a8 | g a bes a( f8.) f16 | g8( f) e f4 }
 sop_phrasethree = { f8 | d'4 d8 c f,4 | bes bes8 a4 }
 sop_phrasethree_alt = { f8 | d'4 d8 c4 f,8 | bes4 bes8 a4 }
 sop_phrasefour = { a8 | e8.( f16) g8 f\( d8.\) d16 | }
 sop_end = { | e8 d cis d4. }
 
-sopMusic = \relative c'' {
+sopMusic = \relative c' {
   \repeat volta 4 {
     \repeat unfold 2 {
       \choral_rest
@@ -111,14 +111,14 @@ altoWords =\lyricmode {
   Ring | in the Christ that | is to be.
 }
 
-tenor_phraseone = { f,8 | f4 a8 d4 d16( d16) | d4 bes8 d4 }
+tenor_phraseone = { f8 | f4 a8 d4 d16( d16) | d4 bes8 d4 }
 tenor_phrasetwo = { d8 | bes4 d8 d8(a8.) a16 | a4 a8 a4 }
 tenor_phrasethree = { a8 | bes4 bes8 f f4 | d8( e) f e4 }
 tenor_phrasethree_alt = { a8 | bes4 bes8 f f4 | d8( e) f e4 }
 tenor_phrasefour = { f8 | bes4 bes8 a8( a8.) f16 | }
 tenor_end = { g8( f) e  f4. }
 
-tenorMusic = \relative c' {
+tenorMusic = \relative c {
   \repeat volta 4 {
     \repeat unfold 2 {
       \choral_rest
