@@ -20,11 +20,15 @@ sop_phrasefour = { a8 | e8.( f16) g8 f\( d8.\) d16 | }
 sop_end = { | e8 d cis d4. }
 
 sopMusic = \relative c' {
-  \repeat volta 4 {
-    \repeat unfold 2 {
+  \repeat unfold 3 {
+    \repeat volta 2 {
       \choral_rest
-      \sop_phraseone \sop_phrasetwo \sop_phrasethree \sop_phrasefour
-    } \alternative { \sop_end {} }
+      \sop_phraseone \sop_phrasetwo \sop_phrasethree \sop_phrasefour \sop_end
+    }
+  }
+  \repeat volta 2 {
+    \choral_rest
+    \sop_phraseone \sop_phrasetwo \sop_phrasethree \sop_phrasefour
   } \alternative {
       \sop_end
       { | e8 d cis d4\fermata \sop_phrasethree_alt \sop_phrasefour \sop_end }
@@ -38,13 +42,16 @@ alto_phrasefour = { d8 | d4 d8 d( d8.) d16 | }
 alto_end = { | cis8( d) a a4. | }
 
 altoMusic = \relative c' {
-  \repeat volta 4 {
-    \repeat unfold 2 {
+  \repeat unfold 3 {
+    \repeat volta 2 {
       \choral_rest
       \alto_phraseone
       \alto_phrasetwo
-      \alto_phrasethree \alto_phrasefour
-    } \alternative { \alto_end {} }
+      \alto_phrasethree \alto_phrasefour \alto_end
+    }
+  }
+  \repeat volta 2 {
+    \choral_rest \alto_phraseone \alto_phrasetwo \alto_phrasethree \alto_phrasefour
   } \alternative {
     \alto_end
     { | cis8( d) a a4 \alto_phrasethree_alt \alto_phrasefour \alto_end }
@@ -54,52 +61,80 @@ altoWords =\lyricmode {
   <<
   \new Lyrics = "firstVerse"
   {
+  \set stanza = #"1. "
   \set associatedVoice = "altos"
   Ring | out, wild bells, to the | wild _ sky,
   The | fly -- ing cloud, the fro -- sty light.
   The | year is dy -- ing, in the night;
   Ring | out, wild bells, and let him die.
-
+  }
+  \new Lyrics = "secondVerse"
+  \with { alignBelowContext = #"firstVerse" } {
+  \set stanza = #"2. "
+  \set associatedVoice = "altos"
   Ring | out the old; ring _ | in the new.
   Ring | ha -- ppy bells  a -- | cross the snow.
   The | year is go -- ing; | let him go.
   Ring | out the false; ring | in the true.
   }
-  \new Lyrics = "secondVerse"
+  >>
+  <<
+  \new Lyrics = "thirdVerse"
   \with { alignBelowContext = #"firstVerse" } {
-    \set associatedVoice = "altos"
+  \set stanza = #"3. "
+  \set associatedVoice = "altos"
   Ring | out the grief that _ | saps the mind
   For | those that here we | see no more;
   Ring | out the feud of | rich and poor,
   Ring | in re -- dress to | all man -- kind.
+  }
 
+  \new Lyrics = "fourthVerse"
+  \with { alignBelowContext = #"thirdVerse" } {
+    \set stanza = #"4. "
+    \set associatedVoice = "altos"
   Ring | out a slow -- ly _ | dy -- ing cause,
   And | anc -- ient forms of | par -- ty strife;
   Ring | in the no -- bler | modes of life,
   With | sweet -- er man -- ners, | pur -- er laws.
   }
-
-  \new Lyrics = "thirdVerse"
-  \with { alignBelowContext = #"secondVerse" } {
+  >>
+  <<
+  \new Lyrics = "fifthVerse"
+  \with { alignBelowContext = #"firstVerse" } {
+  \set stanza = #"5. "
   \set associatedVoice = "altos"
   Ring | out the want, the _ | care, the sin,
   The | faith -- less cold -- ness | of the times;
   ring | out, ring out my | mourn -- ful rhymes
   But | ring the full -- er | min -- strel in.
+  }
 
+  \new Lyrics = "sixthVerse"
+  \with { alignBelowContext = #"fifthVerse" } {
+  \set stanza = #"6. "
+  \set associatedVoice = "altos"
   Ring | out false pride _ in  | place and blood,
   The | ci -- vic slan -- der | and the spite;
   Ring | in the love of | truth and right,
   Ring | in the com -- mon | love of good.
   }
-  \new Lyrics = "fourthVerse"
-  \with { alignBelowContext = #"thirdVerse" } {
+  >>
+  <<
+  \new Lyrics = "seventhVerse"
+  \with { alignBelowContext = #"firstVerse" } {
+  \set stanza = #"7. "
   \set associatedVoice = "altos"
   Ring | out old shapes of _ | foul dis -- ease;
   Ring | out the nar -- rowing | lust of gold;
   Ring | out the thou -- sand | wars of old;
   Ring | in the thou -- sand | years of peace;
+  }
 
+  \new Lyrics = "eighthVerse"
+  \with { alignBelowContext = #"seventhVerse" } {
+  \set stanza = #"8. "
+  \set associatedVoice = "altos"
   Ring | in the val -iant _ | men and free,
   The | larg -- er heart the | kind -- lier hand.
   Ring | out the dark -- ness | of the land;
@@ -119,11 +154,15 @@ tenor_phrasefour = { f8 | bes4 bes8 a8( a8.) f16 | }
 tenor_end = { g8( f) e  f4. }
 
 tenorMusic = \relative c {
-  \repeat volta 4 {
-    \repeat unfold 2 {
+  \repeat unfold 3 {
+    \repeat volta 2 {
       \choral_rest
-      \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree \tenor_phrasefour
-    } \alternative { \tenor_end {} }
+      \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree \tenor_phrasefour \tenor_end
+    }
+  }
+  \repeat volta 2 {
+    \choral_rest
+    \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree \tenor_phrasefour
   } \alternative {
     \tenor_end
     { | g8( f) e f4 \tenor_phrasethree_alt \tenor_phrasefour \tenor_end }
@@ -138,11 +177,15 @@ bass_phrasefour = { d8 | g8.( f16) e8 a\( f8.\) a,16 | }
 bass_end = {  | a4 a8 d4. }
 
 bassMusic = \relative c {
-  \repeat volta 4 {
-    \repeat unfold 2 {
+  \repeat unfold 3 {
+    \repeat volta 2 {
       \choral_rest
-      \bass_phraseone \bass_phrasetwo \bass_phrasethree \bass_phrasefour
-    } \alternative { \bass_end {} }
+      \bass_phraseone \bass_phrasetwo \bass_phrasethree \bass_phrasefour \bass_end
+    }
+  }
+  \repeat volta 2 {
+    \choral_rest
+    \bass_phraseone \bass_phrasetwo \bass_phrasethree \bass_phrasefour
   } \alternative {
     \bass_end
     { | a4 a8 d4 \bass_phrasethree_alt \bass_phrasefour \bass_end }
