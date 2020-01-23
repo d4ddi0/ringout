@@ -192,35 +192,53 @@ bassMusic = \relative c {
   }
 }
 
-\score {
-  <<
-    \new ChoirStaff <<
-      \new Staff = "women" <<
-        \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
-        \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
-      >>
-      \new Lyrics = "altos"
-      \context Lyrics = "altos" \lyricsto "altos" \altoWords
-      \new Staff = "men" <<
-        \clef bass
-        \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
-        \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
-      >>
+choirmusic = {
+  \new ChoirStaff <<
+    \new Staff = "women" <<
+      \new Voice = "sopranos" { \voiceOne << \global \sopMusic >> }
+      \new Voice = "altos" { \voiceTwo << \global \altoMusic >> }
     >>
-    \new PianoStaff <<
-      \new Staff <<
-        \set Staff.printPartCombineTexts = ##f
-        \partcombine
-        << \global \sopMusic >>
-        << \global \altoMusic >>
-      >>
-      \new Staff <<
-        \clef bass
-        \set Staff.printPartCombineTexts = ##f
-        \partcombine
-        << \global \tenorMusic >>
-        << \global \bassMusic >>
-      >>
+    \new Lyrics = "altos"
+    \context Lyrics = "altos" \lyricsto "altos" \altoWords
+    \new Staff = "men" <<
+      \clef bass
+      \new Voice = "tenors" { \voiceOne << \global \tenorMusic >> }
+      \new Voice = "basses" { \voiceTwo << \global \bassMusic >> }
     >>
   >>
+}
+
+pianomusic = {
+  \new PianoStaff <<
+    \new Staff <<
+      \set Staff.printPartCombineTexts = ##f
+      \partcombine
+      << \global \sopMusic >>
+      << \global \altoMusic >>
+    >>
+    \new Staff <<
+      \clef bass
+      \set Staff.printPartCombineTexts = ##f
+      \partcombine
+      << \global \tenorMusic >>
+      << \global \bassMusic >>
+    >>
+  >>
+}
+
+\score {
+  <<
+    \choirmusic
+    \pianomusic
+  >>
+  \layout {}
+}
+
+\score {
+  \unfoldRepeats
+  <<
+    \choirmusic
+    \pianomusic
+  >>
+  \midi {}
 }
