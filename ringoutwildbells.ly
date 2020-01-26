@@ -169,7 +169,7 @@ tenor_phrasetwo = { d8 | bes4 d8 d8(a8.) a16 | a4 a8 a4 }
 tenor_phrasethree = { a8 | bes4 bes8 f f4 | d8( e) f e4 }
 tenor_phrasethree_alt = { a8 | bes4 bes8 f f4 | d8( e) f e4 }
 tenor_phrasefour = { f8 | bes4 bes8 a8( a8.) f16 | }
-tenor_end = { g8( f) e  f4. }
+tenor_end = { | g8( f) e  f4. }
 
 tenorMusic = \relative c {
   \repeat unfold 3 {
