@@ -284,7 +284,7 @@ pianobass = \relative c {
   \repeat unfold 3 {
     \repeat volta 2 {
        <d a d,>4. <bes f bes,>4 <a f a,>8 |
-       <bes f d>4 <f' d bes>8 <f d a>8  <d a f>8 
+       <bes bes,>4. <a' d, a>4
        \partcombine
        <<
          { \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree
@@ -315,7 +315,7 @@ pianobass = \relative c {
   } \alternative {
    { \partcombine  << \tenor_end >> << \relative c \bass_end >> }
    {
-     \partcombine 
+     \partcombine
      <<
        {
          \relative c' { | g8 f e f4 }
