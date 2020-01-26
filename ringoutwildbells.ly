@@ -6,6 +6,13 @@
   last-bottom-spacing.basic-distance = #10
 }
 
+\header {
+  title = "Ring Out, Wild Bells"
+  composer = "Crawford Gates"
+  poet = "Alfred Lord Tennyson"
+  arranger = "arr. Joshua Clayton"
+}
+
 global = {
   \version "2.19.83"
   \key d \minor
