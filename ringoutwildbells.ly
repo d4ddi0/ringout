@@ -226,20 +226,122 @@ choirmusic = {
   >>
 }
 
+pianotreble = \relative g' {
+  \repeat unfold 3 {
+    \repeat volta 2 {
+       d8 a'16 g f e f8 des e | d8 a'16 g f e f8 d
+       \partcombine
+       <<
+         { \relative c' {
+           \sop_phraseone \sop_phrasetwo \sop_phrasethree
+         \sop_phrasefour \sop_end }}
+       >>
+       <<
+         { \relative c'  { \alto_phraseone \alto_phrasetwo \alto_phrasethree
+         \alto_phrasefour \alto_end }}
+       >>
+    }
+  }
+  \partcombine
+  <<
+    \relative c'
+    {
+      \repeat volta 2 {
+        {
+          | d'16 d, d' d, d' d, c' d, bes' d, a' d,
+          |  a'16 d, g d f a, f' a, e' a, }
+        \relative c'
+         { \sop_phraseone \sop_phrasetwo \sop_phrasethree
+        \sop_phrasefour }
+      } \alternative {
+        \relative c' \sop_end
+        {
+          \relative c'{ | e8 d cis d4\fermata
+          \sop_phrasethree_alt \sop_phrasefour \sop_end }
+        }
+      }
+    }
+  >>
+  <<
+    \relative c'
+    {
+      \repeat volta 2 {
+        \choral_rest
+        \alto_phraseone \alto_phrasetwo \alto_phrasethree
+        \alto_phrasefour
+      } \alternative {
+        \relative c' \alto_end
+        {
+          \relative c' { | cis8( d) a a4
+          \alto_phrasethree_alt \alto_phrasefour \alto_end }
+        }
+      }
+    }
+  >>
+}
+
+pianobass = \relative c {
+  \repeat unfold 3 {
+    \repeat volta 2 {
+       <d a d,>4. <bes f bes,>4 <a f a,>8 |
+       <bes f d>4 <f' d bes>8 <f d a>8  <d a f>8 
+       \partcombine
+       <<
+         { \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree
+           \tenor_phrasefour \tenor_end }
+       >>
+       <<
+         { \bass_phraseone \bass_phrasetwo \bass_phrasethree
+           \bass_phrasefour \bass_end }
+       >>
+    }
+  }
+  \repeat volta 2 {
+  \partcombine
+  <<
+   \relative c {
+     \choral_rest
+     \tenor_phraseone \tenor_phrasetwo \tenor_phrasethree
+     \tenor_phrasefour
+   }
+  >>
+  <<
+   \relative c {
+     \choral_rest
+     \bass_phraseone \bass_phrasetwo \bass_phrasethree
+     \bass_phrasefour
+   }
+  >>
+  } \alternative {
+   { \partcombine  << \tenor_end >> << \relative c \bass_end >> }
+   {
+     \partcombine 
+     <<
+       {
+         \relative c' { | g8 f e f4 }
+         \relative c' { \tenor_phrasethree_alt \tenor_phrasefour \tenor_end }
+       }
+     >>
+     <<
+       {
+        \relative c {| a4 a8 d4 }
+        \relative c { \bass_phrasethree_alt \bass_phrasefour \bass_end }
+       }
+     >>
+   }
+  }
+}
+
 pianomusic = {
   \new PianoStaff <<
     \new Staff <<
       \set Staff.printPartCombineTexts = ##f
-      \partcombine
-      << \global \sopMusic >>
-      << \global \altoMusic >>
+      \pianotreble
     >>
     \new Staff <<
       \clef bass
       \set Staff.printPartCombineTexts = ##f
-      \partcombine
-      << \global \tenorMusic >>
-      << \global \bassMusic >>
+      \pianobass
     >>
   >>
 }
