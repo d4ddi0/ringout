@@ -11,6 +11,25 @@ global = {
   \key d \minor
   \time 6/8
 }
+
+structure_repeats =
+#(define-music-function
+  (parser location p_one p_two p_end p_alt_end)
+  (ly:music? ly:music? ly:music? ly:music?)
+  #{
+    \repeat unfold 3 {
+      \repeat volta 2 {
+        #p_one
+      }
+    }
+    \repeat volta 2 {
+      #p_two
+    } \alternative {
+      { #p_end }
+      { #p_alt_end }
+    }
+  #})
+
 choral_rest = { R2. | r2 r8 }
 sop_phraseone = { d8 | d( e) f a4 a16( a16) | bes8( a) g a4 }
 sop_phrasetwo = { a8 | g a bes a( f8.) f16 | g8( f) e f4 }
@@ -20,19 +39,18 @@ sop_phrasefour = { a8 | e8.( f16) g8 f\( d8.\) d16 | }
 sop_end = { | e8 d cis d4. }
 
 sopMusic = \relative c' {
-  \repeat unfold 3 {
-    \repeat volta 2 {
-      \choral_rest
-      \sop_phraseone \sop_phrasetwo \sop_phrasethree \sop_phrasefour \sop_end
+  \structure_repeats
+    {
+      \choral_rest \sop_phraseone
+      \sop_phrasetwo \sop_phrasethree
+      \sop_phrasefour \sop_end
+    } { 
+      \choral_rest \sop_phraseone
+      \sop_phrasetwo \sop_phrasethree
+      \sop_phrasefour
     }
-  }
-  \repeat volta 2 {
-    \choral_rest
-    \sop_phraseone \sop_phrasetwo \sop_phrasethree \sop_phrasefour
-  } \alternative {
-      \sop_end
-      { | e8 d cis d4\fermata \sop_phrasethree_alt \sop_phrasefour \sop_end }
-  }
+    \sop_end
+    { | e8 d cis d4\fermata \sop_phrasethree_alt \sop_phrasefour \sop_end }
 }
 alto_phraseone = { a8 | a4 d8 f4 f16 f | g8( f) e f4 }
 alto_phrasetwo = { f8 | d4 g8 f( d8.) d16 | e8( d) cis d4 }
